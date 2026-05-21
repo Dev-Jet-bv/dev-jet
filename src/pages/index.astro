@@ -11,9 +11,9 @@ import Layout from '../layouts/Layout.astro';
 						Software Development Studio
 					</span>
 			<img src="/logo.png" alt="Dev Jet Logo" class="w-64 object-contain" />
-			<p class="text-xl md:text-4xl mt-8 font-bold text-slate-600 max-w-2xl">
+			<h1 class="text-2xl md:text-5xl mt-8 font-bold text-slate-900 max-w-3xl">
 				Crafting high-quality, performant web & mobile experiences.
-			</p>
+			</h1>
 		</header>
 
 		<!-- Featured Project: Eggbox -->
@@ -55,6 +55,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 
 			<form 
+				netlify
 				name="contact" 
 				method="POST" 
 				data-netlify="true" 
@@ -118,8 +119,12 @@ import Layout from '../layouts/Layout.astro';
 			<p class="text-slate-600 mb-4">
 				&copy; {new Date().getFullYear()} Dev Jet. All rights reserved.
 			</p>
-			<p class="font-medium text-slate-900">
+			<p class="font-medium text-slate-900 inline-flex gap-6 items-center">
 				<a href="mailto:niels@devjet.be" class="hover:text-brand transition-colors">niels@devjet.be</a>
+				<i class="fas fa-circle text-[4px]"></i>
+				<span>BE0744498358</span>
+				<i class="fas fa-circle text-[4px]"></i>
+				<span>Weverstraat 36, 1982 Zemst Belgium</span>
 			</p>
 		</footer>
 	</main>
