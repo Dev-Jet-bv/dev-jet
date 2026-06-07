@@ -4,3 +4,12 @@
   --color-brand: #2596be;
   --font-display: "Inter", system-ui, sans-serif;
 }
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}

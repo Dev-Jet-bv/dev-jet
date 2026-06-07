@@ -1,131 +1,631 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const services = [
+	{
+		icon: "fa-globe",
+		title: "Web Development",
+		description: "Fast, accessible, and beautifully crafted web applications. From marketing sites to complex platforms — built with modern frameworks that last.",
+		tags: ["React", "Astro", "Next.js", "TypeScript"],
+	},
+	{
+		icon: "fa-mobile-screen",
+		title: "Mobile Apps",
+		description: "Cross-platform mobile experiences that feel truly native. Ship to iOS and Android simultaneously without sacrificing quality.",
+		tags: [".NET MAUI", "iOS", "Android"],
+	},
+	{
+		icon: "fa-microchip",
+		title: "Custom Solutions",
+		description: "Tailored software for unique challenges. APIs, hardware integrations, embedded systems — we thrive on problems that don't have off-the-shelf answers.",
+		tags: ["APIs", "IoT", "Hardware", "Audio"],
+	},
+];
+
+const process = [
+	{ step: "01", title: "Discovery", description: "We start by deeply understanding your goals, users, and constraints. No assumptions — just clear alignment on what success looks like." },
+	{ step: "02", title: "Design", description: "Clean, intentional interfaces designed for clarity and delight. Every decision is purposeful, with your brand and users at the center." },
+	{ step: "03", title: "Build", description: "Performant, maintainable code delivered fast. We ship iteratively so you see real progress early and often." },
+	{ step: "04", title: "Launch", description: "We handle deployment, monitoring, and post-launch support — so you can focus on growing what we built together." },
+];
+
+const stats = [
+	{ number: "5+", label: "Years of experience" },
+	{ number: "20+", label: "Projects delivered" },
+	{ number: "2", label: "Platforms supported" },
+	{ number: "∞", label: "Problems solved" },
+];
 ---
 
 <Layout title="Dev Jet | Web & Mobile Development">
-	<main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
-		<!-- Header / Hero Section -->
-		<header class="flex flex-col items-center text-center mb-16 md:mb-24">
-			
-			<span class="inline-block px-3 py-1 bg-brand/10 text-brand text-sm font-semibold rounded-full mb-4 border border-brand/20">
-						Software Development Studio
-					</span>
-			<img src="/logo.png" alt="Dev Jet Logo" class="w-64 object-contain" />
-			<h1 class="text-2xl md:text-5xl mt-8 font-bold text-slate-900 max-w-3xl">
-				Crafting high-quality, performant web & mobile experiences.
-			</h1>
-		</header>
+	<!-- Background -->
+	<div class="fixed inset-0 -z-10 bg-[#07101c]">
+		<div class="grid-bg absolute inset-0"></div>
+		<div class="orb orb-1"></div>
+		<div class="orb orb-2"></div>
+		<div class="orb orb-3"></div>
+	</div>
 
-		<!-- Featured Project: Eggbox -->
-		<section class="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 mb-16 shadow-sm">
-			<div class="flex flex-col md:flex-row gap-8 items-center">
-				<div class="flex-1 text-center md:text-left">
-					<span class="inline-block px-3 py-1 bg-brand/10 text-brand text-sm font-semibold rounded-full mb-4 border border-brand/20">
-						Featured App
-					</span>
-					<div class="flex items-center gap-4 mb-4">
-						<img src="/eggbox/logo.png" alt="Eggbox Logo" class="size-9 object-contain" />
-						<h2 class="text-3xl font-bold text-slate-700 font-display">Eggbox</h2>
-					</div>
-					<p class="text-lg text-slate-600 mb-6">
-						Our latest IOS and Android application built with .NET MAUI. The app is used to communicate with our custom Eggbox audio mixer for silent music rehearsals.
-					</p>
-					<a 
-						href="https://eggbox.be" 
-						target="_blank" 
-						rel="noopener noreferrer"
-						class="inline-flex items-center py-3 px-6 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-colors shadow-lg shadow-slate-200 active:scale-[0.98] cursor-pointer"
-					>
-						Read more <i class="fas fa-chevron-right ml-2 text-sm"></i>
-					</a>
-				</div>
-				<div class="w-full md:w-1/3 aspect-square bg-slate-50 rounded-2xl flex items-center justify-center border border-dashed border-slate-300">
-					<span class="text-slate-400 font-medium text-center">Coming soon for<br> Android & iOS</span>
-				</div>
-			</div>
-		</section>
+	<!-- Sticky Nav -->
+	<nav class="fixed top-0 inset-x-0 z-50 border-b border-white/5 backdrop-blur-xl bg-[#07101c]/70">
+		<div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+			<img src="/logo.png" alt="Dev Jet" class="h-7 object-contain brightness-0 invert opacity-90" />
+			<a href="#contact" class="nav-cta">
+				Get in touch <i class="fas fa-arrow-right ml-2 text-xs"></i>
+			</a>
+		</div>
+	</nav>
 
-		<!-- Support Section -->
-		<section id="support" class="mb-16 md:mb-24">
-			<div class="text-center mb-12">
-				<h2 class="text-3xl font-bold mb-4 text-slate-900 font-display">Support & Contact</h2>
-				<p class="text-lg text-slate-600">
-					Need help with one of our apps? Or just want to say hello?
+	<main class="text-white">
+
+		<!-- ── Hero ────────────────────────────────────────────── -->
+		<section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+			<div class="reveal">
+				<span class="badge mb-8">Software Development Studio — Zemst, Belgium</span>
+				<h1 class="hero-title mb-6">
+					We build<br>
+					<span class="gradient-text">digital products</span><br>
+					that matter.
+				</h1>
+				<p class="text-lg md:text-xl text-white/40 max-w-xl mx-auto mb-12 leading-relaxed">
+					High-quality web & mobile experiences crafted with precision,
+					performance, and genuine care for the end user.
 				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href="#work" class="btn-primary">See our work</a>
+					<a href="#contact" class="btn-ghost">Start a project</a>
+				</div>
 			</div>
 
-			<form 
-				netlify
-				name="contact" 
-				method="POST" 
-				data-netlify="true" 
-				class="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm max-w-2xl mx-auto space-y-6"
-			>
-				<div>
-					<label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name</label>
-					<input 
-						type="text" 
-						id="name" 
-						name="name" 
-						required 
-						class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand focus:border-brand transition-all outline-none"
-						placeholder="Your Name"
-					/>
-				</div>
-				<div>
-					<label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-					<input 
-						type="email" 
-						id="email" 
-						name="email" 
-						required 
-						class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand focus:border-brand transition-all outline-none"
-						placeholder="john@company.com"
-					/>
-				</div>
-				<div>
-					<label for="app" class="block text-sm font-medium text-slate-700 mb-1">App (optional)</label>
-					<select 
-						id="app" 
-						name="app" 
-						class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand focus:border-brand transition-all outline-none appearance-none"
-					>
-						<option value="eggbox">Eggbox</option>
-						<option value="other">Other Inquiry</option>
-					</select>
-				</div>
-				<div>
-					<label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
-					<textarea 
-						id="message" 
-						name="message" 
-						rows="4" 
-						required 
-						class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand focus:border-brand transition-all outline-none"
-						placeholder="How can we help you?"
-					></textarea>
-				</div>
-				<button 
-					type="submit" 
-					class="w-full py-4 px-6 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-colors shadow-lg shadow-slate-200 active:scale-[0.98] cursor-pointer"
-				>
-					Send Message <i class="fas fa-paper-plane ml-2 text-sm"></i>
-				</button>
-			</form>
+			<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/25 text-xs tracking-widest uppercase">
+				<span>Scroll</span>
+				<div class="scroll-line"></div>
+			</div>
 		</section>
 
-		<!-- Footer -->
-		<footer class="text-center border-t border-slate-200 pt-12">
-			<p class="text-slate-600 mb-4">
-				&copy; {new Date().getFullYear()} Dev Jet. All rights reserved.
-			</p>
-			<p class="font-medium text-slate-900 inline-flex gap-6 items-center">
-				<a href="mailto:niels@devjet.be" class="hover:text-brand transition-colors">niels@devjet.be</a>
-				<i class="fas fa-circle text-[4px]"></i>
-				<span>BE0744498358</span>
-				<i class="fas fa-circle text-[4px]"></i>
-				<span>Weverstraat 36, 1982 Zemst Belgium</span>
-			</p>
+		<!-- ── Stats ───────────────────────────────────────────── -->
+		<section class="py-16 border-y border-white/5">
+			<div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+				{stats.map((s, i) => (
+					<div class="reveal" style={`--delay:${i * 80}ms`}>
+						<div class="stat-number gradient-text">{s.number}</div>
+						<div class="text-white/40 text-sm mt-1">{s.label}</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- ── Services ────────────────────────────────────────── -->
+		<section id="services" class="py-28 px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="reveal text-center mb-16">
+					<span class="badge mb-5">What We Do</span>
+					<h2 class="section-title">Full-stack expertise,<br>start to finish.</h2>
+					<p class="text-white/40 text-lg max-w-lg mx-auto mt-5">
+						We handle everything from concept to deployment — so you can focus on what matters most to your business.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-3 gap-5">
+					{services.map((s, i) => (
+						<div class="reveal card group" style={`--delay:${i * 100}ms`}>
+							<div class="icon-box mb-6 group-hover:scale-110 group-hover:border-brand/40 transition-all duration-300">
+								<i class={`fas ${s.icon} text-brand`}></i>
+							</div>
+							<h3 class="text-xl font-bold mb-3">{s.title}</h3>
+							<p class="text-white/40 text-sm leading-relaxed mb-6">{s.description}</p>
+							<div class="flex flex-wrap gap-2">
+								{s.tags.map(tag => (
+									<span class="tag">{tag}</span>
+								))}
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- ── Featured Project ─────────────────────────────────── -->
+		<section id="work" class="py-28 px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="reveal text-center mb-16">
+					<span class="badge mb-5">Featured Project</span>
+					<h2 class="section-title">Our latest work.</h2>
+				</div>
+
+				<div class="reveal card-featured">
+					<div class="flex flex-col lg:flex-row gap-12 items-center">
+						<!-- Info -->
+						<div class="flex-1">
+							<div class="flex items-center gap-4 mb-6">
+								<img src="/eggbox/logo.png" alt="Eggbox" class="size-14 object-contain rounded-2xl" />
+								<div>
+									<h3 class="text-3xl font-black tracking-tight">Eggbox</h3>
+									<p class="text-brand text-sm font-semibold mt-0.5">Mobile Application · .NET MAUI</p>
+								</div>
+							</div>
+							<p class="text-white/60 text-lg leading-relaxed mb-4">
+								A companion app for the custom-built Eggbox audio mixer — designed for silent music rehearsals where every musician hears their own personalised mix.
+							</p>
+							<p class="text-white/30 text-sm leading-relaxed mb-8">
+								Built with .NET MAUI for seamless cross-platform performance on iOS and Android. Features real-time communication with the hardware mixer, an intuitive channel interface, and rock-solid Bluetooth reliability — even in noisy environments.
+							</p>
+							<div class="flex flex-wrap gap-2 mb-8">
+								{[".NET MAUI", "Bluetooth", "iOS", "Android", "Real-time Audio"].map(tag => (
+									<span class="tag tag-brand">{tag}</span>
+								))}
+							</div>
+							<a href="https://eggbox.be" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex">
+								Visit eggbox.be <i class="fas fa-arrow-up-right-from-square ml-2 text-sm"></i>
+							</a>
+						</div>
+
+						<!-- App preview -->
+						<div class="w-full lg:w-80 shrink-0">
+							<div class="app-preview-card">
+								<div class="absolute inset-0 bg-grid-inner opacity-10 rounded-3xl"></div>
+								<div class="relative z-10 text-center">
+									<div class="text-5xl mb-4">📱</div>
+									<p class="text-white/30 text-sm font-medium">App screenshots<br>coming soon</p>
+								</div>
+								<div class="absolute top-5 right-5 size-2 rounded-full bg-brand animate-pulse"></div>
+								<div class="absolute bottom-5 left-5 size-1.5 rounded-full bg-indigo-400 animate-pulse" style="animation-delay:0.5s"></div>
+								<div class="absolute top-1/2 left-4 size-1 rounded-full bg-brand/50 animate-pulse" style="animation-delay:1s"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── Process ──────────────────────────────────────────── -->
+		<section class="py-28 px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="reveal text-center mb-16">
+					<span class="badge mb-5">How We Work</span>
+					<h2 class="section-title">Simple process,<br>outstanding results.</h2>
+				</div>
+
+				<div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
+					{process.map((p, i) => (
+						<div class="reveal card process-card" style={`--delay:${i * 80}ms`}>
+							<div class="step-number">{p.step}</div>
+							<h3 class="text-base font-bold mb-2">{p.title}</h3>
+							<p class="text-white/40 text-sm leading-relaxed">{p.description}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- ── Why Us ────────────────────────────────────────────── -->
+		<section class="py-28 px-6 border-y border-white/5">
+			<div class="max-w-6xl mx-auto">
+				<div class="flex flex-col lg:flex-row gap-16 items-center">
+					<div class="reveal flex-1">
+						<span class="badge mb-5">Why Dev Jet</span>
+						<h2 class="section-title mb-6">Small team.<br>Big output.</h2>
+						<p class="text-white/50 text-lg leading-relaxed mb-6">
+							We're a small, focused studio — which means every project gets our full attention. No handoffs to junior developers, no lost context between teams. Just experienced engineers who care about the work.
+						</p>
+						<p class="text-white/40 leading-relaxed">
+							We work closely with founders, product teams, and creative agencies to turn complex ideas into polished software. Fast turnaround, transparent communication, and code you can actually maintain long-term.
+						</p>
+					</div>
+					<div class="reveal flex-1 grid grid-cols-2 gap-4">
+						{[
+							{ icon: "fa-bolt", title: "Fast delivery", desc: "We ship iteratively and keep you in the loop — no month-long silences." },
+							{ icon: "fa-code", title: "Clean code", desc: "Maintainable, well-structured code that doesn't become technical debt." },
+							{ icon: "fa-comments", title: "Direct comms", desc: "You talk to the people actually building your product. Always." },
+							{ icon: "fa-shield-halved", title: "Built to last", desc: "We design for the long term — scalable architecture from day one." },
+						].map((item, i) => (
+							<div class="card p-5" style={`--delay:${i * 80}ms`}>
+								<div class="icon-box mb-4 size-10">
+									<i class={`fas ${item.icon} text-brand text-sm`}></i>
+								</div>
+								<h4 class="font-bold text-sm mb-2">{item.title}</h4>
+								<p class="text-white/40 text-xs leading-relaxed">{item.desc}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── Contact ──────────────────────────────────────────── -->
+		<section id="contact" class="py-28 px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="reveal text-center mb-16">
+					<span class="badge mb-5">Get in Touch</span>
+					<h2 class="section-title">Let's build something<br>great together.</h2>
+					<p class="text-white/40 text-lg max-w-lg mx-auto mt-5">
+						Have a project in mind? Need support with one of our apps? We'd love to hear from you.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-5 gap-6 max-w-5xl mx-auto items-start">
+					<!-- Contact meta cards -->
+					<div class="reveal md:col-span-2 space-y-4">
+						<div class="card p-6">
+							<div class="icon-box mb-4"><i class="fas fa-envelope text-brand"></i></div>
+							<p class="text-white/40 text-xs uppercase tracking-wider mb-1">Email</p>
+							<a href="mailto:niels@devjet.be" class="text-brand font-semibold hover:underline text-sm">niels@devjet.be</a>
+						</div>
+						<div class="card p-6">
+							<div class="icon-box mb-4"><i class="fas fa-location-dot text-brand"></i></div>
+							<p class="text-white/40 text-xs uppercase tracking-wider mb-1">Based in</p>
+							<p class="text-sm font-semibold">Zemst, Belgium</p>
+							<p class="text-white/40 text-xs mt-0.5">Working globally</p>
+						</div>
+						<div class="card p-6">
+							<div class="icon-box mb-4"><i class="fas fa-clock text-brand"></i></div>
+							<p class="text-white/40 text-xs uppercase tracking-wider mb-1">Response time</p>
+							<p class="text-sm font-semibold">Within 24 hours</p>
+							<p class="text-white/40 text-xs mt-0.5">Usually much faster</p>
+						</div>
+					</div>
+
+					<!-- Form -->
+					<form
+						netlify
+						name="contact"
+						method="POST"
+						data-netlify="true"
+						class="reveal md:col-span-3 card p-8 space-y-5"
+					>
+						<div class="grid grid-cols-2 gap-5">
+							<div>
+								<label for="name" class="field-label">Name</label>
+								<input type="text" id="name" name="name" required class="field-input" placeholder="Your name" />
+							</div>
+							<div>
+								<label for="email" class="field-label">Email</label>
+								<input type="email" id="email" name="email" required class="field-input" placeholder="your@email.com" />
+							</div>
+						</div>
+						<div>
+							<label for="app" class="field-label">What's this about?</label>
+							<select id="app" name="app" class="field-input appearance-none">
+								<option value="eggbox">Eggbox support</option>
+								<option value="project">New project inquiry</option>
+								<option value="other">Other</option>
+							</select>
+						</div>
+						<div>
+							<label for="message" class="field-label">Message</label>
+							<textarea id="message" name="message" rows="5" required class="field-input" placeholder="Tell us about your project or question..."></textarea>
+						</div>
+						<button type="submit" class="btn-primary w-full justify-center">
+							Send Message <i class="fas fa-paper-plane ml-2 text-sm"></i>
+						</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── Footer ───────────────────────────────────────────── -->
+		<footer class="py-10 px-6 border-t border-white/5">
+			<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
+				<div class="flex items-center gap-4">
+					<img src="/logo.png" alt="Dev Jet" class="h-5 object-contain brightness-0 invert opacity-30" />
+					<span class="text-white/20 text-sm">&copy; {new Date().getFullYear()} Dev Jet. All rights reserved.</span>
+				</div>
+				<div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-sm text-white/25">
+					<a href="mailto:niels@devjet.be" class="hover:text-brand transition-colors">niels@devjet.be</a>
+					<span>·</span>
+					<span>BE0744498358</span>
+					<span>·</span>
+					<span>Weverstraat 36, 1982 Zemst</span>
+				</div>
+			</div>
 		</footer>
 	</main>
 </Layout>
+
+<style>
+	/* ── Background ──────────────────────────────────────────── */
+	.grid-bg {
+		background-image:
+			linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+		background-size: 64px 64px;
+	}
+	.orb {
+		position: absolute;
+		border-radius: 50%;
+		filter: blur(90px);
+		animation: drift 10s ease-in-out infinite;
+		pointer-events: none;
+	}
+	.orb-1 {
+		width: 500px; height: 500px;
+		background: radial-gradient(circle, rgba(37,150,190,0.14), transparent 70%);
+		top: -15%; left: -10%;
+		animation-duration: 12s;
+	}
+	.orb-2 {
+		width: 380px; height: 380px;
+		background: radial-gradient(circle, rgba(99,102,241,0.1), transparent 70%);
+		top: 45%; right: -8%;
+		animation-delay: -4s;
+		animation-duration: 14s;
+	}
+	.orb-3 {
+		width: 300px; height: 300px;
+		background: radial-gradient(circle, rgba(37,150,190,0.08), transparent 70%);
+		bottom: 5%; left: 25%;
+		animation-delay: -8s;
+		animation-duration: 16s;
+	}
+	@keyframes drift {
+		0%, 100% { transform: translate(0, 0) scale(1); }
+		33%       { transform: translate(20px, -30px) scale(1.04); }
+		66%       { transform: translate(-15px, 20px) scale(0.97); }
+	}
+
+	/* ── Typography ──────────────────────────────────────────── */
+	.hero-title {
+		font-size: clamp(3rem, 8vw, 7rem);
+		font-weight: 900;
+		line-height: 0.95;
+		letter-spacing: -0.03em;
+	}
+	.section-title {
+		font-size: clamp(2rem, 4.5vw, 3.25rem);
+		font-weight: 900;
+		line-height: 1.08;
+		letter-spacing: -0.025em;
+	}
+	.stat-number {
+		font-size: clamp(2.5rem, 5vw, 3.5rem);
+		font-weight: 900;
+		letter-spacing: -0.03em;
+		line-height: 1;
+	}
+
+	/* Animated shimmer gradient text */
+	.gradient-text {
+		background: linear-gradient(120deg, #2596be 0%, #818cf8 40%, #2596be 80%);
+		background-size: 200% auto;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		animation: shimmer 5s linear infinite;
+	}
+	@keyframes shimmer {
+		0%   { background-position: 0% center; }
+		100% { background-position: 200% center; }
+	}
+
+	/* ── Badge ───────────────────────────────────────────────── */
+	.badge {
+		display: inline-block;
+		padding: 0.3rem 1rem;
+		background: rgba(37,150,190,0.08);
+		border: 1px solid rgba(37,150,190,0.2);
+		color: #2596be;
+		font-size: 0.7rem;
+		font-weight: 700;
+		border-radius: 9999px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	/* ── Nav ─────────────────────────────────────────────────── */
+	.nav-cta {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.5rem 1.25rem;
+		border: 1px solid rgba(37,150,190,0.35);
+		color: #2596be;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		border-radius: 9999px;
+		transition: all 0.2s;
+	}
+	.nav-cta:hover {
+		background: #2596be;
+		color: white;
+	}
+
+	/* ── Cards ───────────────────────────────────────────────── */
+	.card {
+		background: rgba(255,255,255,0.025);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 1.5rem;
+		padding: 2rem;
+		transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+	}
+	.card:hover {
+		border-color: rgba(37,150,190,0.2);
+		background: rgba(37,150,190,0.025);
+		transform: translateY(-3px);
+	}
+
+	.card-featured {
+		background: rgba(255,255,255,0.025);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 2rem;
+		padding: 2.5rem 3rem;
+		position: relative;
+		overflow: hidden;
+	}
+	.card-featured::before {
+		content: '';
+		position: absolute;
+		top: 0; left: 0; right: 0;
+		height: 1px;
+		background: linear-gradient(90deg, transparent 10%, rgba(37,150,190,0.6) 50%, transparent 90%);
+	}
+
+	.app-preview-card {
+		aspect-ratio: 9/16;
+		max-height: 440px;
+		background: linear-gradient(135deg, rgba(37,150,190,0.1) 0%, rgba(99,102,241,0.07) 100%);
+		border: 1px solid rgba(255,255,255,0.08);
+		border-radius: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		overflow: hidden;
+	}
+	.bg-grid-inner {
+		background-image:
+			linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+		background-size: 24px 24px;
+	}
+
+	.process-card {
+		text-align: left;
+		position: relative;
+	}
+	.step-number {
+		font-size: 3.5rem;
+		font-weight: 900;
+		color: rgba(255,255,255,0.04);
+		line-height: 1;
+		margin-bottom: 0.75rem;
+		letter-spacing: -0.04em;
+	}
+
+	/* ── Icon box ────────────────────────────────────────────── */
+	.icon-box {
+		width: 2.75rem;
+		height: 2.75rem;
+		background: rgba(37,150,190,0.1);
+		border: 1px solid rgba(37,150,190,0.18);
+		border-radius: 0.75rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s;
+	}
+
+	/* ── Tags ────────────────────────────────────────────────── */
+	.tag {
+		font-size: 0.7rem;
+		padding: 0.25rem 0.625rem;
+		border-radius: 9999px;
+		background: rgba(255,255,255,0.05);
+		border: 1px solid rgba(255,255,255,0.09);
+		color: rgba(255,255,255,0.45);
+	}
+	.tag-brand {
+		background: rgba(37,150,190,0.08);
+		border-color: rgba(37,150,190,0.2);
+		color: #2596be;
+	}
+
+	/* ── Buttons ─────────────────────────────────────────────── */
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.875rem 1.75rem;
+		background: #2596be;
+		color: white;
+		font-weight: 700;
+		font-size: 0.875rem;
+		border-radius: 0.875rem;
+		transition: all 0.2s;
+		cursor: pointer;
+	}
+	.btn-primary:hover {
+		background: #1e85a8;
+		transform: translateY(-2px);
+		box-shadow: 0 10px 30px rgba(37,150,190,0.3);
+	}
+	.btn-primary:active { transform: scale(0.98); }
+
+	.btn-ghost {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.875rem 1.75rem;
+		background: rgba(255,255,255,0.04);
+		border: 1px solid rgba(255,255,255,0.1);
+		color: rgba(255,255,255,0.75);
+		font-weight: 700;
+		font-size: 0.875rem;
+		border-radius: 0.875rem;
+		transition: all 0.2s;
+	}
+	.btn-ghost:hover {
+		background: rgba(255,255,255,0.08);
+		border-color: rgba(255,255,255,0.2);
+		color: white;
+		transform: translateY(-2px);
+	}
+
+	/* ── Form ────────────────────────────────────────────────── */
+	.field-label {
+		display: block;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: rgba(255,255,255,0.4);
+		margin-bottom: 0.4rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+	.field-input {
+		width: 100%;
+		padding: 0.75rem 1rem;
+		background: rgba(255,255,255,0.03);
+		border: 1px solid rgba(255,255,255,0.09);
+		border-radius: 0.75rem;
+		color: white;
+		font-size: 0.875rem;
+		outline: none;
+		transition: all 0.2s;
+		font-family: inherit;
+	}
+	.field-input::placeholder { color: rgba(255,255,255,0.18); }
+	.field-input:focus {
+		border-color: rgba(37,150,190,0.5);
+		background: rgba(37,150,190,0.04);
+		box-shadow: 0 0 0 3px rgba(37,150,190,0.08);
+	}
+	.field-input option {
+		background: #0d1f30;
+		color: white;
+	}
+
+	/* ── Scroll indicator ────────────────────────────────────── */
+	.scroll-line {
+		width: 1px;
+		height: 40px;
+		background: linear-gradient(to bottom, rgba(255,255,255,0.35), transparent);
+		animation: scrollPulse 2.5s ease-in-out infinite;
+	}
+	@keyframes scrollPulse {
+		0%, 100% { opacity: 1; transform: scaleY(1) translateY(0); }
+		50%       { opacity: 0.2; transform: scaleY(0.5) translateY(6px); }
+	}
+
+	/* ── Reveal animation ────────────────────────────────────── */
+	.reveal {
+		opacity: 0;
+		transform: translateY(28px);
+		transition: opacity 0.75s ease, transform 0.75s ease;
+		transition-delay: var(--delay, 0ms);
+	}
+	.reveal.in-view {
+		opacity: 1;
+		transform: translateY(0);
+	}
+</style>
+
+<script>
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('in-view');
+				}
+			});
+		},
+		{ threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+	);
+
+	document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
