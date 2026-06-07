@@ -160,17 +160,18 @@ const stats = [
 							</a>
 						</div>
 
-						<!-- App preview -->
-						<div class="w-full lg:w-80 shrink-0">
-							<div class="app-preview-card">
-								<div class="absolute inset-0 bg-grid-inner opacity-10 rounded-3xl"></div>
-								<div class="relative z-10 text-center">
-									<div class="text-5xl mb-4">📱</div>
-									<p class="text-white/30 text-sm font-medium">App screenshots<br>coming soon</p>
+						<!-- App screenshots -->
+						<div class="w-full lg:w-96 shrink-0 flex items-center justify-center py-8 lg:py-0">
+							<div class="screens-fan">
+								<div class="screen screen-left">
+									<img src="/eggbox/screens/1.png" alt="Eggbox IN/OUT setup screen" />
 								</div>
-								<div class="absolute top-5 right-5 size-2 rounded-full bg-brand animate-pulse"></div>
-								<div class="absolute bottom-5 left-5 size-1.5 rounded-full bg-indigo-400 animate-pulse" style="animation-delay:0.5s"></div>
-								<div class="absolute top-1/2 left-4 size-1 rounded-full bg-brand/50 animate-pulse" style="animation-delay:1s"></div>
+								<div class="screen screen-center">
+									<img src="/eggbox/screens/2.png" alt="Eggbox mixer faders" />
+								</div>
+								<div class="screen screen-right">
+									<img src="/eggbox/screens/3.png" alt="Eggbox all set screen" />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -458,23 +459,55 @@ const stats = [
 		background: linear-gradient(90deg, transparent 10%, rgba(37,150,190,0.6) 50%, transparent 90%);
 	}
 
-	.app-preview-card {
-		aspect-ratio: 9/16;
-		max-height: 440px;
-		background: linear-gradient(135deg, rgba(37,150,190,0.1) 0%, rgba(99,102,241,0.07) 100%);
-		border: 1px solid rgba(255,255,255,0.08);
-		border-radius: 2rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	.screens-fan {
 		position: relative;
-		overflow: hidden;
+		width: 320px;
+		height: 380px;
 	}
-	.bg-grid-inner {
-		background-image:
-			linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-		background-size: 24px 24px;
+	.screen {
+		position: absolute;
+		border-radius: 20px;
+		overflow: hidden;
+		box-shadow: 0 24px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.07);
+	}
+	.screen img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+	.screen-left {
+		width: 118px;
+		height: 256px;
+		top: 62px;
+		left: 16px;
+		transform: rotate(-9deg);
+		z-index: 1;
+		opacity: 0.55;
+		filter: brightness(0.7);
+	}
+	.screen-center {
+		width: 152px;
+		height: 328px;
+		top: 26px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 3;
+		animation: floatPhone 4.5s ease-in-out infinite;
+	}
+	.screen-right {
+		width: 118px;
+		height: 256px;
+		top: 62px;
+		right: 16px;
+		transform: rotate(9deg);
+		z-index: 1;
+		opacity: 0.55;
+		filter: brightness(0.7);
+	}
+	@keyframes floatPhone {
+		0%, 100% { transform: translateX(-50%) translateY(0px); }
+		50%       { transform: translateX(-50%) translateY(-10px); }
 	}
 
 	.process-card {
