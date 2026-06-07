@@ -28,18 +28,11 @@ const process = [
 	{ step: "03", title: "Build", description: "Performant, maintainable code delivered fast. We ship iteratively so you see real progress early and often." },
 	{ step: "04", title: "Launch", description: "We handle deployment, monitoring, and post-launch support — so you can focus on growing what we built together." },
 ];
-
-const stats = [
-	{ number: "5+", label: "Years of experience" },
-	{ number: "20+", label: "Projects delivered" },
-	{ number: "2", label: "Platforms supported" },
-	{ number: "∞", label: "Problems solved" },
-];
 ---
 
 <Layout title="Dev Jet | Web & Mobile Development">
 	<!-- Background -->
-	<div class="fixed inset-0 -z-10 bg-[#07101c]">
+	<div class="fixed inset-0 -z-10 bg-gray-50">
 		<div class="grid-bg absolute inset-0"></div>
 		<div class="orb orb-1"></div>
 		<div class="orb orb-2"></div>
@@ -47,16 +40,16 @@ const stats = [
 	</div>
 
 	<!-- Sticky Nav -->
-	<nav class="fixed top-0 inset-x-0 z-50 border-b border-white/5 backdrop-blur-xl bg-[#07101c]/70">
+	<nav class="fixed top-0 inset-x-0 z-50 border-b border-gray-200 backdrop-blur-xl bg-white/80">
 		<div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-			<img src="/logo.png" alt="Dev Jet" class="h-7 object-contain brightness-0 invert opacity-90" />
+			<img src="/logo.png" alt="Dev Jet" class="h-7 object-contain brightness-0 opacity-80" />
 			<a href="#contact" class="nav-cta">
 				Get in touch <i class="fas fa-arrow-right ml-2 text-xs"></i>
 			</a>
 		</div>
 	</nav>
 
-	<main class="text-white">
+	<main class="text-gray-900">
 
 		<!-- ── Hero ────────────────────────────────────────────── -->
 		<section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
@@ -67,7 +60,7 @@ const stats = [
 					<span class="gradient-text">digital products</span><br>
 					that matter.
 				</h1>
-				<p class="text-lg md:text-xl text-white/40 max-w-xl mx-auto mb-12 leading-relaxed">
+				<p class="text-lg md:text-xl text-gray-500 max-w-xl mx-auto mb-12 leading-relaxed">
 					High-quality web & mobile experiences crafted with precision,
 					performance, and genuine care for the end user.
 				</p>
@@ -77,21 +70,9 @@ const stats = [
 				</div>
 			</div>
 
-			<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/25 text-xs tracking-widest uppercase">
+			<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-gray-400 text-xs tracking-widest uppercase">
 				<span>Scroll</span>
 				<div class="scroll-line"></div>
-			</div>
-		</section>
-
-		<!-- ── Stats ───────────────────────────────────────────── -->
-		<section class="py-16 border-y border-white/5">
-			<div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-				{stats.map((s, i) => (
-					<div class="reveal" style={`--delay:${i * 80}ms`}>
-						<div class="stat-number gradient-text">{s.number}</div>
-						<div class="text-white/40 text-sm mt-1">{s.label}</div>
-					</div>
-				))}
 			</div>
 		</section>
 
@@ -101,7 +82,7 @@ const stats = [
 				<div class="reveal text-center mb-16">
 					<span class="badge mb-5">What We Do</span>
 					<h2 class="section-title">Full-stack expertise,<br>start to finish.</h2>
-					<p class="text-white/40 text-lg max-w-lg mx-auto mt-5">
+					<p class="text-gray-500 text-lg max-w-lg mx-auto mt-5">
 						We handle everything from concept to deployment — so you can focus on what matters most to your business.
 					</p>
 				</div>
@@ -113,7 +94,7 @@ const stats = [
 								<i class={`fas ${s.icon} text-brand`}></i>
 							</div>
 							<h3 class="text-xl font-bold mb-3">{s.title}</h3>
-							<p class="text-white/40 text-sm leading-relaxed mb-6">{s.description}</p>
+							<p class="text-gray-500 text-sm leading-relaxed mb-6">{s.description}</p>
 							<div class="flex flex-wrap gap-2">
 								{s.tags.map(tag => (
 									<span class="tag">{tag}</span>
@@ -144,10 +125,10 @@ const stats = [
 									<p class="text-brand text-sm font-semibold mt-0.5">Mobile Application · .NET MAUI</p>
 								</div>
 							</div>
-							<p class="text-white/60 text-lg leading-relaxed mb-4">
+							<p class="text-gray-600 text-lg leading-relaxed mb-4">
 								A companion app for the custom-built Eggbox audio mixer — designed for silent music rehearsals where every musician hears their own personalised mix.
 							</p>
-							<p class="text-white/30 text-sm leading-relaxed mb-8">
+							<p class="text-gray-400 text-sm leading-relaxed mb-8">
 								Built with .NET MAUI for seamless cross-platform performance on iOS and Android. Features real-time communication with the hardware mixer, an intuitive channel interface, and rock-solid Wi-Fi reliability — even in noisy environments.
 							</p>
 							<div class="flex flex-wrap gap-2 mb-8">
@@ -192,7 +173,7 @@ const stats = [
 						<div class="reveal card process-card" style={`--delay:${i * 80}ms`}>
 							<div class="step-number">{p.step}</div>
 							<h3 class="text-base font-bold mb-2">{p.title}</h3>
-							<p class="text-white/70 text-sm leading-relaxed">{p.description}</p>
+							<p class="text-gray-600 text-sm leading-relaxed">{p.description}</p>
 						</div>
 					))}
 				</div>
@@ -200,16 +181,16 @@ const stats = [
 		</section>
 
 		<!-- ── Why Us ────────────────────────────────────────────── -->
-		<section class="py-28 px-6 border-y border-white/5">
+		<section class="py-28 px-6 border-y border-gray-200">
 			<div class="max-w-6xl mx-auto">
 				<div class="flex flex-col lg:flex-row gap-16 items-center">
 					<div class="reveal flex-1">
 						<span class="badge mb-5">Why Dev Jet</span>
 						<h2 class="section-title mb-6">Small team.<br>Big output.</h2>
-						<p class="text-white/70 text-lg leading-relaxed mb-6">
+						<p class="text-gray-600 text-lg leading-relaxed mb-6">
 							We're a small, focused studio — which means every project gets our full attention. No handoffs to junior developers, no lost context between teams. Just experienced engineers who care about the work.
 						</p>
-						<p class="text-white/50 leading-relaxed">
+						<p class="text-gray-500 leading-relaxed">
 							We work closely with founders, product teams, and creative agencies to turn complex ideas into polished software. Fast turnaround, transparent communication, and code you can actually maintain long-term.
 						</p>
 					</div>
@@ -225,7 +206,7 @@ const stats = [
 									<i class={`fa-duotone fa-light ${item.icon} text-brand text-base`}></i>
 								</div>
 								<h4 class="font-bold text-sm mb-2">{item.title}</h4>
-								<p class="text-white/70 text-sm leading-relaxed">{item.desc}</p>
+								<p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
 							</div>
 						))}
 					</div>
@@ -239,7 +220,7 @@ const stats = [
 				<div class="reveal text-center mb-16">
 					<span class="badge mb-5">Get in Touch</span>
 					<h2 class="section-title">Let's build something<br>great together.</h2>
-					<p class="text-white/40 text-lg max-w-lg mx-auto mt-5">
+					<p class="text-gray-500 text-lg max-w-lg mx-auto mt-5">
 						Have a project in mind? Need support with one of our apps? We'd love to hear from you.
 					</p>
 				</div>
@@ -249,14 +230,14 @@ const stats = [
 					<div class="reveal md:col-span-2 space-y-4">
 						<div class="card p-6">
 							<div class="icon-box mb-4"><i class="fas fa-envelope text-brand"></i></div>
-							<p class="text-white/40 text-xs uppercase tracking-wider mb-1">Email</p>
+							<p class="text-gray-400 text-xs uppercase tracking-wider mb-1">Email</p>
 							<a href="mailto:niels@devjet.be" class="text-brand font-semibold hover:underline text-sm">niels@devjet.be</a>
 						</div>
 						<div class="card p-6">
 							<div class="icon-box mb-4"><i class="fas fa-clock text-brand"></i></div>
-							<p class="text-white/40 text-xs uppercase tracking-wider mb-1">Response time</p>
+							<p class="text-gray-400 text-xs uppercase tracking-wider mb-1">Response time</p>
 							<p class="text-sm font-semibold">Within 24 hours</p>
-							<p class="text-white/40 text-xs mt-0.5">Usually much faster</p>
+							<p class="text-gray-400 text-xs mt-0.5">Usually much faster</p>
 						</div>
 					</div>
 
@@ -298,13 +279,13 @@ const stats = [
 		</section>
 
 		<!-- ── Footer ───────────────────────────────────────────── -->
-		<footer class="py-10 px-6 border-t border-white/5">
+		<footer class="py-10 px-6 border-t border-gray-200">
 			<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
 				<div class="flex items-center gap-4">
-					<img src="/logo.png" alt="Dev Jet" class="h-5 object-contain brightness-0 invert" />
-					<span class="text-white/20 text-sm">&copy; {new Date().getFullYear()} Dev Jet. All rights reserved.</span>
+					<img src="/logo.png" alt="Dev Jet" class="h-5 object-contain brightness-0 opacity-70" />
+					<span class="text-gray-400 text-sm">&copy; {new Date().getFullYear()} Dev Jet. All rights reserved.</span>
 				</div>
-				<div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-sm text-white/75">
+				<div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-sm text-gray-600">
 					<a href="mailto:niels@devjet.be" class="hover:text-brand transition-colors">niels@devjet.be</a>
 					<span>·</span>
 					<span>BE0744498358</span>
@@ -318,8 +299,8 @@ const stats = [
 	/* ── Background ──────────────────────────────────────────── */
 	.grid-bg {
 		background-image:
-			linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+			linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
 		background-size: 64px 64px;
 	}
 	.orb {
@@ -331,20 +312,20 @@ const stats = [
 	}
 	.orb-1 {
 		width: 500px; height: 500px;
-		background: radial-gradient(circle, rgba(37,150,190,0.14), transparent 70%);
+		background: radial-gradient(circle, rgba(154,37,190,0.12), transparent 70%);
 		top: -15%; left: -10%;
 		animation-duration: 12s;
 	}
 	.orb-2 {
 		width: 380px; height: 380px;
-		background: radial-gradient(circle, rgba(99,102,241,0.1), transparent 70%);
+		background: radial-gradient(circle, rgba(154,37,190,0.08), transparent 70%);
 		top: 45%; right: -8%;
 		animation-delay: -4s;
 		animation-duration: 14s;
 	}
 	.orb-3 {
 		width: 300px; height: 300px;
-		background: radial-gradient(circle, rgba(37,150,190,0.08), transparent 70%);
+		background: radial-gradient(circle, rgba(154,37,190,0.06), transparent 70%);
 		bottom: 5%; left: 25%;
 		animation-delay: -8s;
 		animation-duration: 16s;
@@ -368,16 +349,10 @@ const stats = [
 		line-height: 1.08;
 		letter-spacing: -0.025em;
 	}
-	.stat-number {
-		font-size: clamp(2.5rem, 5vw, 3.5rem);
-		font-weight: 900;
-		letter-spacing: -0.03em;
-		line-height: 1;
-	}
 
 	/* Animated shimmer gradient text */
 	.gradient-text {
-		background: linear-gradient(120deg, #2596be 0%, #818cf8 40%, #2596be 80%);
+		background: linear-gradient(120deg, #f43f8b 0%, #f59e0b 50%, #f43f8b 100%);
 		background-size: 200% auto;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -393,9 +368,9 @@ const stats = [
 	.badge {
 		display: inline-block;
 		padding: 0.3rem 1rem;
-		background: rgba(37,150,190,0.08);
-		border: 1px solid rgba(37,150,190,0.2);
-		color: #2596be;
+		background: rgba(154,37,190,0.08);
+		border: 1px solid rgba(154,37,190,0.2);
+		color: #9a25be;
 		font-size: 0.7rem;
 		font-weight: 700;
 		border-radius: 9999px;
@@ -408,35 +383,35 @@ const stats = [
 		display: inline-flex;
 		align-items: center;
 		padding: 0.5rem 1.25rem;
-		border: 1px solid rgba(37,150,190,0.35);
-		color: #2596be;
+		border: 1px solid rgba(154,37,190,0.35);
+		color: #9a25be;
 		font-size: 0.8125rem;
 		font-weight: 600;
 		border-radius: 9999px;
 		transition: all 0.2s;
 	}
 	.nav-cta:hover {
-		background: #2596be;
+		background: #9a25be;
 		color: white;
 	}
 
 	/* ── Cards ───────────────────────────────────────────────── */
 	.card {
-		background: rgba(255,255,255,0.025);
-		border: 1px solid rgba(255,255,255,0.07);
+		background: rgba(0,0,0,0.02);
+		border: 1px solid rgba(0,0,0,0.07);
 		border-radius: 1.5rem;
 		padding: 2rem;
 		transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
 	}
 	.card:hover {
-		border-color: rgba(37,150,190,0.2);
-		background: rgba(37,150,190,0.075);
+		border-color: rgba(154,37,190,0.2);
+		background: rgba(154,37,190,0.04);
 		transform: translateY(-3px);
 	}
 
 	.card-featured {
-		background: rgba(255,255,255,0.025);
-		border: 1px solid rgba(255,255,255,0.07);
+		background: rgba(0,0,0,0.02);
+		border: 1px solid rgba(0,0,0,0.07);
 		border-radius: 2rem;
 		padding: 2.5rem 3rem;
 		position: relative;
@@ -447,7 +422,7 @@ const stats = [
 		position: absolute;
 		top: 0; left: 0; right: 0;
 		height: 1px;
-		background: linear-gradient(90deg, transparent 10%, rgba(37,150,190,0.6) 50%, transparent 90%);
+		background: linear-gradient(90deg, transparent 10%, rgba(154,37,190,0.5) 50%, transparent 90%);
 	}
 
 	.screens-fan {
@@ -459,7 +434,7 @@ const stats = [
 		position: absolute;
 		border-radius: 10px;
 		overflow: hidden;
-		box-shadow: 0 24px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.07);
+		box-shadow: 0 24px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.07);
 	}
 	.screen img {
 		width: 100%;
@@ -475,7 +450,7 @@ const stats = [
 		transform: rotate(-9deg);
 		z-index: 1;
 		opacity: 0.55;
-		filter: brightness(0.7);
+		filter: brightness(0.85);
 	}
 	.screen-center {
 		width: 152px;
@@ -494,7 +469,7 @@ const stats = [
 		transform: rotate(9deg);
 		z-index: 1;
 		opacity: 0.55;
-		filter: brightness(0.7);
+		filter: brightness(0.85);
 	}
 	@keyframes floatPhone {
 		0%, 100% { transform: translateX(-50%) translateY(0px); }
@@ -508,7 +483,7 @@ const stats = [
 	.step-number {
 		font-size: 3.5rem;
 		font-weight: 900;
-		color: rgba(255,255,255,0.2);
+		color: rgba(0,0,0,0.1);
 		line-height: 1;
 		margin-bottom: 0.75rem;
 		letter-spacing: -0.04em;
@@ -518,8 +493,8 @@ const stats = [
 	.icon-box {
 		width: 2.75rem;
 		height: 2.75rem;
-		background: rgba(37,150,190,0.1);
-		border: 1px solid rgba(37,150,190,0.18);
+		background: rgba(154,37,190,0.08);
+		border: 1px solid rgba(154,37,190,0.18);
 		border-radius: 0.75rem;
 		display: flex;
 		align-items: center;
@@ -532,14 +507,14 @@ const stats = [
 		font-size: 0.7rem;
 		padding: 0.25rem 0.625rem;
 		border-radius: 9999px;
-		background: rgba(255,255,255,0.05);
-		border: 1px solid rgba(255,255,255,0.09);
-		color: rgba(255,255,255,0.45);
+		background: rgba(0,0,0,0.05);
+		border: 1px solid rgba(0,0,0,0.08);
+		color: rgba(0,0,0,0.45);
 	}
 	.tag-brand {
-		background: rgba(37,150,190,0.08);
-		border-color: rgba(37,150,190,0.2);
-		color: #2596be;
+		background: rgba(154,37,190,0.08);
+		border-color: rgba(154,37,190,0.2);
+		color: #9a25be;
 	}
 
 	/* ── Buttons ─────────────────────────────────────────────── */
@@ -547,18 +522,19 @@ const stats = [
 		display: inline-flex;
 		align-items: center;
 		padding: 0.875rem 1.75rem;
-		background: #2596be;
+		background: #9a25be;
 		color: white;
 		font-weight: 700;
 		font-size: 0.875rem;
 		border-radius: 0.875rem;
 		transition: all 0.2s;
 		cursor: pointer;
+		box-shadow: 0 6px 20px rgba(154,37,190,0.25);
 	}
 	.btn-primary:hover {
-		background: #1e85a8;
+		background: #8020a8;
 		transform: translateY(-2px);
-		box-shadow: 0 10px 30px rgba(37,150,190,0.3);
+		box-shadow: 0 10px 30px rgba(154,37,190,0.35);
 	}
 	.btn-primary:active { transform: scale(0.98); }
 
@@ -566,18 +542,18 @@ const stats = [
 		display: inline-flex;
 		align-items: center;
 		padding: 0.875rem 1.75rem;
-		background: rgba(255,255,255,0.04);
-		border: 1px solid rgba(255,255,255,0.1);
-		color: rgba(255,255,255,0.75);
+		background: rgba(0,0,0,0.04);
+		border: 1px solid rgba(0,0,0,0.1);
+		color: rgba(0,0,0,0.65);
 		font-weight: 700;
 		font-size: 0.875rem;
 		border-radius: 0.875rem;
 		transition: all 0.2s;
 	}
 	.btn-ghost:hover {
-		background: rgba(255,255,255,0.08);
-		border-color: rgba(255,255,255,0.2);
-		color: white;
+		background: rgba(0,0,0,0.08);
+		border-color: rgba(0,0,0,0.15);
+		color: black;
 		transform: translateY(-2px);
 	}
 
@@ -586,7 +562,7 @@ const stats = [
 		display: block;
 		font-size: 0.75rem;
 		font-weight: 600;
-		color: rgb(255 255 255 / 0.58);
+		color: rgb(0 0 0 / 0.5);
 		margin-bottom: 0.4rem;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -594,31 +570,31 @@ const stats = [
 	.field-input {
 		width: 100%;
 		padding: 0.75rem 1rem;
-		background: rgba(255,255,255,0.03);
-		border: 1px solid rgba(255,255,255,0.09);
+		background: rgba(0,0,0,0.03);
+		border: 1px solid rgba(0,0,0,0.1);
 		border-radius: 0.75rem;
-		color: white;
+		color: #111;
 		font-size: 0.875rem;
 		outline: none;
 		transition: all 0.2s;
 		font-family: inherit;
 	}
-	.field-input::placeholder { color: rgba(255,255,255,0.28); }
+	.field-input::placeholder { color: rgba(0,0,0,0.28); }
 	.field-input:focus {
-		border-color: rgba(37,150,190,0.5);
-		background: rgba(37,150,190,0.04);
-		box-shadow: 0 0 0 3px rgba(37,150,190,0.08);
+		border-color: rgba(154,37,190,0.5);
+		background: rgba(154,37,190,0.03);
+		box-shadow: 0 0 0 3px rgba(154,37,190,0.08);
 	}
 	.field-input option {
-		background: #0d1f30;
-		color: white;
+		background: white;
+		color: #111;
 	}
 
 	/* ── Scroll indicator ────────────────────────────────────── */
 	.scroll-line {
 		width: 1px;
 		height: 40px;
-		background: linear-gradient(to bottom, rgba(255,255,255,0.35), transparent);
+		background: linear-gradient(to bottom, rgba(0,0,0,0.25), transparent);
 		animation: scrollPulse 2.5s ease-in-out infinite;
 	}
 	@keyframes scrollPulse {
