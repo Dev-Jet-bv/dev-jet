@@ -148,10 +148,10 @@ const stats = [
 								A companion app for the custom-built Eggbox audio mixer — designed for silent music rehearsals where every musician hears their own personalised mix.
 							</p>
 							<p class="text-white/30 text-sm leading-relaxed mb-8">
-								Built with .NET MAUI for seamless cross-platform performance on iOS and Android. Features real-time communication with the hardware mixer, an intuitive channel interface, and rock-solid Bluetooth reliability — even in noisy environments.
+								Built with .NET MAUI for seamless cross-platform performance on iOS and Android. Features real-time communication with the hardware mixer, an intuitive channel interface, and rock-solid Wi-Fi reliability — even in noisy environments.
 							</p>
 							<div class="flex flex-wrap gap-2 mb-8">
-								{[".NET MAUI", "Bluetooth", "iOS", "Android", "Real-time Audio"].map(tag => (
+								{[".NET MAUI", "iOS", "Android", "Real-time Audio"].map(tag => (
 									<span class="tag tag-brand">{tag}</span>
 								))}
 							</div>
@@ -192,7 +192,7 @@ const stats = [
 						<div class="reveal card process-card" style={`--delay:${i * 80}ms`}>
 							<div class="step-number">{p.step}</div>
 							<h3 class="text-base font-bold mb-2">{p.title}</h3>
-							<p class="text-white/40 text-sm leading-relaxed">{p.description}</p>
+							<p class="text-white/70 text-sm leading-relaxed">{p.description}</p>
 						</div>
 					))}
 				</div>
@@ -206,10 +206,10 @@ const stats = [
 					<div class="reveal flex-1">
 						<span class="badge mb-5">Why Dev Jet</span>
 						<h2 class="section-title mb-6">Small team.<br>Big output.</h2>
-						<p class="text-white/50 text-lg leading-relaxed mb-6">
+						<p class="text-white/70 text-lg leading-relaxed mb-6">
 							We're a small, focused studio — which means every project gets our full attention. No handoffs to junior developers, no lost context between teams. Just experienced engineers who care about the work.
 						</p>
-						<p class="text-white/40 leading-relaxed">
+						<p class="text-white/50 leading-relaxed">
 							We work closely with founders, product teams, and creative agencies to turn complex ideas into polished software. Fast turnaround, transparent communication, and code you can actually maintain long-term.
 						</p>
 					</div>
@@ -221,11 +221,11 @@ const stats = [
 							{ icon: "fa-shield-halved", title: "Built to last", desc: "We design for the long term — scalable architecture from day one." },
 						].map((item, i) => (
 							<div class="card p-5" style={`--delay:${i * 80}ms`}>
-								<div class="icon-box mb-4 size-10">
-									<i class={`fas ${item.icon} text-brand text-sm`}></i>
+								<div class="icon-box mb-4 size-12">
+									<i class={`fa-duotone fa-light ${item.icon} text-brand text-base`}></i>
 								</div>
 								<h4 class="font-bold text-sm mb-2">{item.title}</h4>
-								<p class="text-white/40 text-xs leading-relaxed">{item.desc}</p>
+								<p class="text-white/70 text-sm leading-relaxed">{item.desc}</p>
 							</div>
 						))}
 					</div>
@@ -251,12 +251,6 @@ const stats = [
 							<div class="icon-box mb-4"><i class="fas fa-envelope text-brand"></i></div>
 							<p class="text-white/40 text-xs uppercase tracking-wider mb-1">Email</p>
 							<a href="mailto:niels@devjet.be" class="text-brand font-semibold hover:underline text-sm">niels@devjet.be</a>
-						</div>
-						<div class="card p-6">
-							<div class="icon-box mb-4"><i class="fas fa-location-dot text-brand"></i></div>
-							<p class="text-white/40 text-xs uppercase tracking-wider mb-1">Based in</p>
-							<p class="text-sm font-semibold">Zemst, Belgium</p>
-							<p class="text-white/40 text-xs mt-0.5">Working globally</p>
 						</div>
 						<div class="card p-6">
 							<div class="icon-box mb-4"><i class="fas fa-clock text-brand"></i></div>
@@ -436,7 +430,7 @@ const stats = [
 	}
 	.card:hover {
 		border-color: rgba(37,150,190,0.2);
-		background: rgba(37,150,190,0.025);
+		background: rgba(37,150,190,0.075);
 		transform: translateY(-3px);
 	}
 
@@ -514,7 +508,7 @@ const stats = [
 	.step-number {
 		font-size: 3.5rem;
 		font-weight: 900;
-		color: rgba(255,255,255,0.04);
+		color: rgba(255,255,255,0.2);
 		line-height: 1;
 		margin-bottom: 0.75rem;
 		letter-spacing: -0.04em;
@@ -592,7 +586,7 @@ const stats = [
 		display: block;
 		font-size: 0.75rem;
 		font-weight: 600;
-		color: rgba(255,255,255,0.4);
+		color: rgb(255 255 255 / 0.58);
 		margin-bottom: 0.4rem;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -609,7 +603,7 @@ const stats = [
 		transition: all 0.2s;
 		font-family: inherit;
 	}
-	.field-input::placeholder { color: rgba(255,255,255,0.18); }
+	.field-input::placeholder { color: rgba(255,255,255,0.28); }
 	.field-input:focus {
 		border-color: rgba(37,150,190,0.5);
 		background: rgba(37,150,190,0.04);
